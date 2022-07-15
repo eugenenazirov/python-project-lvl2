@@ -8,7 +8,7 @@ test-coverage:
 	poetry run pytest --cov=python-project-lvl2
 
 lint:
-	poetry run flake8 python-project-lvl2
+	poetry run flake8 gendiff
 
 selfcheck:
 	poetry check
