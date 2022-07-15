@@ -1,12 +1,12 @@
-import argparse
+from gendiff import generate_diff
 
 
-gendiff = argparse.ArgumentParser(prog='gendiff', description='Compares two configuration files\
-     and shows a difference.')
-gendiff.add_argument('first_file')
-gendiff.add_argument('second_file')
-gendiff.add_argument('-f', '--format', help='set format of output')
+def main():
+    generate_diff()
 
 
-args = gendiff.parse_args()
-gendiff.print_help()
+if __name__ == '__main__':
+    main()
+
+
+generate_diff(r'gendiff/files/file1.json', r'gendiff/files/file2.json')
