@@ -5,7 +5,8 @@ def generate_diff(file_path1, file_path2):
     file1 = json.load(open(file_path1))
     file2 = json.load(open(file_path2))
     merged_files = file1 | file2
-    sorted_files = dict(sorted(merged_files.items(), key=lambda x: x[0]))
+    sorted_list = sorted(merged_files.items(), key=lambda x: x[0])
+    sorted_files = dict(sorted_list)
     result = '{' + '\n'
     for i in sorted_files:
         if i in file1.keys() & file2.keys():
