@@ -1,4 +1,4 @@
-name: Run Linter and Tests
+name: Run Linter
 on: [push]
 
 jobs:
