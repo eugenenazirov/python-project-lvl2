@@ -1,4 +1,4 @@
-name: Run Linter
+name: Linter (flake8)
 on: [push]
 
 jobs:
