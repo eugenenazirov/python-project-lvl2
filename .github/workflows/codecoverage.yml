@@ -26,7 +26,7 @@ jobs:
         run: make test
 
   Coverage:
-    needs: [ test ]
+    needs: [ Tests ]
     name: Coverage
     runs-on: ubuntu-latest
     steps:
