@@ -1,11 +1,11 @@
-name: Code Coverage (by codeclimate)
+name: CI (linter, tests and code coverage)
 
 on:
   - push
   - pull_request
 
 jobs:
-  build:
+  Code-coverage:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -21,9 +21,12 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
         # make depends on poetry
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v2.0.0
+        with:
+          poetry-version: ${{ matrix.poetry-version }}
       - name: Install dependencies
         run: |
-          pip install poetry
           make install
       - name: Run linter and pytest
         run: |
