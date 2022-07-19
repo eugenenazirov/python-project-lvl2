@@ -1,8 +1,12 @@
 name: Code Coverage (by codeclimate)
-on: [push]
+
+on:
+  - push
+  - pull_request
 
 jobs:
-  Tests:
+  build:
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
@@ -10,37 +14,24 @@ jobs:
         poetry-version: ["1.1.13"]
         pytest-version: ["7.1.2"]
         os: [ubuntu-latest]
-    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install pytest
-        run: pip install pytest
-      - name: Run poetry
-        uses: abatilo/actions-poetry@v2.0.0
-        with:
-          poetry-version: ${{ matrix.poetry-version }}
-      - name: Run Tests
-        run: make test
-
-  Coverage:
-    needs: [ Tests ]
-    name: Coverage
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '12'
-      - run: npm install -g yarn
-      - run: yarn install
+        # make depends on poetry
+      - name: Install dependencies
+        run: |
+          pip install poetry
+          make install
+      - name: Run linter and pytest
+        run: |
+          make check
       - name: Test & publish code coverage
-        uses: paambaati/codeclimate-action@v3.0.0
+        uses: paambaati/codeclimate-action@v2.7.4
         env:
           CC_TEST_REPORTER_ID: de402e0d46f510430a1a2934da0e7cb4dbd921412e3f51932546fd06e57f9d6c
         with:
-          coverageCommand: yarn run coverage
-          coverageLocations: |
-            ${{github.workspace}}/*.lcov:lcov
+          coverageCommand: make test-coverage
+          debug: true
