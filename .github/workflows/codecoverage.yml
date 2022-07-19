@@ -1,4 +1,4 @@
-name: Auto-Tests (pytest)
+name: Code Coverage (by codeclimate)
 on: [push]
 
 jobs:
