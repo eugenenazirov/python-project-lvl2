@@ -22,10 +22,12 @@ jobs:
         uses: abatilo/actions-poetry@v2.0.0
         with:
           poetry-version: ${{ matrix.poetry-version }}
+      - name: Install coveragePy
+        run: poetry add --dev coverage
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v3.0.0
         env:
           CC_TEST_REPORTER_ID: de402e0d46f510430a1a2934da0e7cb4dbd921412e3f51932546fd06e57f9d6c
         with:
-          coverageCommand: npm run coverage
+          coverageCommand: poetry run coverage run -m pytest
           debug: true
