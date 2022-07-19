@@ -25,20 +25,20 @@ jobs:
       - name: Run Tests
         run: make test
 
-    Coverage:
-      needs: [ test ]
-      name: Coverage
-      runs-on: ubuntu-latest
-      steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
-        with:
-          node-version: '12'
-      - run: npm install -g yarn
-      - run: yarn install
-      - run: yarn build
-      - uses: paambaati/codeclimate-action@v2.2.4
-        env:
-          CC_TEST_REPORTER_ID: de402e0d46f510430a1a2934da0e7cb4dbd921412e3f51932546fd06e57f9d6c
-        with:
-          coverageCommand: yarn coverage
+  Coverage:
+    needs: [ test ]
+    name: Coverage
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: actions/setup-node@master
+      with:
+        node-version: '12'
+    - run: npm install -g yarn
+    - run: yarn install
+    - run: yarn build
+    - uses: paambaati/codeclimate-action@v2.2.4
+      env:
+        CC_TEST_REPORTER_ID: de402e0d46f510430a1a2934da0e7cb4dbd921412e3f51932546fd06e57f9d6c
+      with:
+        coverageCommand: yarn coverage
