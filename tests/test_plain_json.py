@@ -5,6 +5,7 @@ from gendiff import generate_diff
 
 cwd = Path.cwd()
 
+
 @pytest.fixture
 def json1():
     path = Path(cwd, 'tests', 'fixtures', 'plain_json', 'file1.json')
@@ -17,8 +18,8 @@ def json2():
     return path
 
 
-def test_gendiff(json1, json2):
-    assertion_path = Path(cwd, 'tests', 'fixtures', 'plain_json', 'assertion_string.txt')
+def test_gendiff_json(json1, json2):
+    assertion_path = Path(cwd, 'tests', 'fixtures', 'assertion_string.txt')
     with open(assertion_path, 'r') as assertion_string:
         assertion_result = assertion_string.read()
     assert generate_diff(json1, json2) == assertion_result
