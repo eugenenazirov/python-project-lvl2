@@ -1,9 +1,12 @@
-import json
-
+from gendiff import parse_files
 
 def generate_diff(file_path1, file_path2):
-    file1 = json.load(open(file_path1))
-    file2 = json.load(open(file_path2))
+    """GENDIFF func generates the difference between two files, like git diff.
+    The func gives two arguments: file_path1 and file_path2
+    Supports .json, .yml, .yaml files"""
+
+    file1 = parse_files(file_path1)
+    file2 = parse_files(file_path2)
     merged_files = file1 | file2
     sorted_list = sorted(merged_files.items(), key=lambda x: x[0])
     sorted_files = dict(sorted_list)
