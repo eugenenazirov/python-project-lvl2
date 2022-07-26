@@ -19,7 +19,8 @@ def parse_yaml(file_path):
 def parse_files(file_path):
     '''Detect file type (json or yaml)
     and returns the result of calling the corresponding functions'''
-    if file_path.endswith('.json'):
+    path_to_str = str(file_path)
+    if path_to_str.endswith('.json'):
         return parse_json(file_path)
-    elif file_path.endswith('.yml') or file_path.endswith('.yaml'):
+    elif path_to_str.endswith('.yml') or path_to_str.endswith('.yaml'):
         return parse_yaml(file_path)
