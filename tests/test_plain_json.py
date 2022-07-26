@@ -23,5 +23,3 @@ def test_gendiff_json(json1, json2):
     with open(assertion_path, 'r') as assertion_string:
         assertion_result = assertion_string.read()
     assert generate_diff(json1, json2) == assertion_result
-
-# test_gendiff()

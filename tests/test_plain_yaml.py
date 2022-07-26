@@ -14,7 +14,7 @@ def yaml1():
 
 @pytest.fixture
 def yaml2():
-    path = Path(cwd, 'tests', 'fixtures', 'plain_json', 'file2.yaml')
+    path = Path(cwd, 'tests', 'fixtures', 'plain_yaml', 'file2.yaml')
     return path
 
 
