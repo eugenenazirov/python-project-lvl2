@@ -1,4 +1,5 @@
-from gendiff import parse_files
+from gendiff.parse_files import parse_files
+
 
 def generate_diff(file_path1, file_path2):
     """GENDIFF func generates the difference between two files, like git diff.
