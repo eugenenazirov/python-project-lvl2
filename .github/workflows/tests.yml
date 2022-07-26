@@ -1,5 +1,7 @@
 name: Auto-Tests (pytest)
-on: [push]
+on:
+  - push
+  - pull_request
 
 jobs:
   Tests:
