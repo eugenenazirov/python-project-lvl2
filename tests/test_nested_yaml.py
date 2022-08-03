@@ -19,7 +19,7 @@ def yaml2():
 
 
 def test_gendiff_yaml(yaml1, yaml2):
-    assertion_path = Path(cwd, 'tests', 'fixtures', 'assertion_string.txt')
+    assertion_path = Path(cwd, 'tests', 'fixtures', 'assertion_string_nested.txt')
     with open(assertion_path, 'r') as assertion_string:
         assertion_result = assertion_string.read()
     assert generate_diff(yaml1, yaml2) == assertion_result

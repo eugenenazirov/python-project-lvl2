@@ -19,7 +19,7 @@ def json2():
 
 
 def test_gendiff_json(json1, json2):
-    assertion_path = Path(cwd, 'tests', 'fixtures', 'assertion_string.txt')
+    assertion_path = Path(cwd, 'tests', 'fixtures', 'assertion_string_plain.txt')
     with open(assertion_path, 'r') as assertion_string:
         assertion_result = assertion_string.read()
     assert generate_diff(json1, json2) == assertion_result
