@@ -8,13 +8,13 @@ cwd = Path.cwd()
 
 @pytest.fixture
 def yaml1():
-    path = Path(cwd, 'tests', 'fixtures', 'plain_yaml', 'file1.yml')
+    path = Path(cwd, 'tests', 'fixtures', 'nested_yaml', 'file1.yaml')
     return path
 
 
 @pytest.fixture
 def yaml2():
-    path = Path(cwd, 'tests', 'fixtures', 'plain_yaml', 'file2.yaml')
+    path = Path(cwd, 'tests', 'fixtures', 'nested_yaml', 'file2.yml')
     return path
 
 
