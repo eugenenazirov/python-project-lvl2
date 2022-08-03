@@ -27,4 +27,4 @@ def generate_diff(file_path1, file_path2):
     return result.lower()
 
 
-# print(generate_diff(r'gendiff/files/file1.json', r'gendiff/files/file2.json'))
+# print(generate_diff(r'gendiff/files/plain/json/file1.json', r'gendiff/files/plain/json/file2.json'))
