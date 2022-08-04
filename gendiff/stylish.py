@@ -1,31 +1,15 @@
 def stylish(diff):
+
     result = '{' + '\n'
-    for i in diff.keys():
-        if i['diff'] == 'both':
-            if file1[i] == file2[i]:
-                result = result + '    ' + i + ': ' + str(file1[i]) + '\n'
-            else:
-                result = result + '  - ' + i + ': ' + str(file1[i]) + '\n'
-                result = result + '  + ' + i + ': ' + str(file2[i]) + '\n'
-        elif i['diff'] == 'only_first':
-            result = result + '  - ' + i + ': ' + str(file1[i]) + '\n'
-        elif i['diff'] == 'only_second':
-            result = result + '  + ' + i + ': ' + str(file2[i]) + '\n'
+    for i in diff:
+        if i['diff'] == 'both_no_changes':
+            result = result + '    ' + i['key'] + ': ' + str(i['value']) + '\n'
+        elif i['diff'] == 'both_have_changes':
+            result = result + '  - ' + i['key'] + ': ' + str(i['changes']['-']) + '\n'
+            result = result + '  + ' + i['key'] + ': ' + str(i['changes']['+']) + '\n'
+        elif i['diff'] == 'first_only':
+            result = result + '  - ' + i['key'] + ': ' + str(i['value']) + '\n'
+        elif i['diff'] == 'second_only':
+            result = result + '  + ' + i['key'] + ': ' + str(i['value']) + '\n'
     result = result + '}'
     return result.lower()
-
-
-    # result = '{' + '\n'
-    # for i in sorted_files:
-    #     if i in file1.keys() & file2.keys():
-    #         if file1[i] == file2[i]:
-    #             result = result + '    ' + i + ': ' + str(file1[i]) + '\n'
-    #         else:
-    #             result = result + '  - ' + i + ': ' + str(file1[i]) + '\n'
-    #             result = result + '  + ' + i + ': ' + str(file2[i]) + '\n'
-    #     elif i in file1.keys() - file2.keys():
-    #         result = result + '  - ' + i + ': ' + str(file1[i]) + '\n'
-    #     elif i in file2.keys() - file1.keys():
-    #         result = result + '  + ' + i + ': ' + str(file2[i]) + '\n'
-    # result = result + '}'
-    # return result.lower()
