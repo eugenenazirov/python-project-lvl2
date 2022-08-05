@@ -1,5 +1,4 @@
 def stylish(diff):
-
     result = '{' + '\n'
     for i in diff:
         if i['diff'] == 'both_no_changes':
