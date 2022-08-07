@@ -2,7 +2,6 @@ from gendiff.parse_files import parse_files
 from gendiff.stylish import stylish
 from gendiff.sort_files import sort_files
 
-
 def generate_diff(file_path1, file_path2, formatter=stylish):
     """GENDIFF func generates the difference between two files, like git diff.
     The func gives two arguments: file_path1 and file_path2
