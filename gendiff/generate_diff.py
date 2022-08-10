@@ -20,6 +20,6 @@ def generate_diff(file_path1, file_path2, formatter="stylish"):
 
     if len(keys1) == 0 and len(keys2) == 0:
         return
-    
+
     result = make_diff(file1, file2, formatter)
     return result

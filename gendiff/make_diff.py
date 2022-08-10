@@ -3,7 +3,7 @@ from .plain_formatter import plain
 from .json_formatter import true_false_none_for_tree
 
 
-def compare(dict1, dict2):
+def compare(dict1, dict2):  # noqa: C901
     result = {}
 
     def start(dict1, dict2, result_cur):

@@ -11,7 +11,10 @@ def main():
     args = gendiff.parse_args()
     formatter = args.format
     if formatter:
-        diff = generate_diff(args.first_file, args.second_file, formatter=formatter)
+        diff = generate_diff(
+            args.first_file,
+            args.second_file,
+            formatter=formatter)
     else:
         diff = generate_diff(args.first_file, args.second_file)
     print(diff)

@@ -26,7 +26,7 @@ def is_next_same(key, tree):
         return False, None, None
 
 
-def plain(tree):
+def plain(tree):  # noqa: C901
     def start(tree, cur_result, parent=None, pass_next=False):
         for key in tree:
 
