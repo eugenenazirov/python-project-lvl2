@@ -6,7 +6,7 @@ def generate_diff(file_path1, file_path2, formatter="stylish"):
     """GENDIFF func generates the difference between two files, like git diff.
     The func gives two arguments: file_path1 and file_path2
     Supports .json, .yml, .yaml files"""
-    
+
     with open(file_path1) as f1_open:
         with open(file_path2) as f2_open:
             if len(f1_open.read()) == 0 or len(f2_open.read()) == 0:

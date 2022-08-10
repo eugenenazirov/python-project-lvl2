@@ -24,5 +24,12 @@ def test_gendiff_json(json1, json2):
         assertion_result = assertion_string.read()
     assert generate_diff(json1, json2) == assertion_result
 
+def test_gendiff_json_formatter_plain(json1, json2):
+    assertion_path = Path(cwd, 'tests', 'fixtures', 'assertion_string_formatter_plain.txt')
+    with open(assertion_path, 'r') as assertion_string:
+        assertion_result = assertion_string.read()
+    assert generate_diff(json1, json2, formatter='plain') == assertion_result
+
+
 def test_gendiff_with_empty(json1):
     assert generate_diff(json1, "tests/fixtures/empty.json") is None
