@@ -17,3 +17,6 @@ https://asciinema.org/a/510950
 
 Nested .json and .yaml files (recursive diff)
 https://asciinema.org/a/513886
+
+Plain output format for nested .json and .yaml
+https://asciinema.org/a/513898
