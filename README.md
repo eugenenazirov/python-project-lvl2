@@ -14,3 +14,6 @@ https://asciinema.org/a/509502
 
 Plain .yaml files
 https://asciinema.org/a/510950
+
+Nested .json and .yaml files (recursive diff)
+https://asciinema.org/a/513886

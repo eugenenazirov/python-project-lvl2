@@ -1,30 +1,25 @@
-from gendiff.parse_files import parse_files
+from .parse_files import parse_files
+from .make_diff import make_diff
 
 
-def generate_diff(file_path1, file_path2):
+def generate_diff(file_path1, file_path2, formatter="stylish"):
     """GENDIFF func generates the difference between two files, like git diff.
     The func gives two arguments: file_path1 and file_path2
     Supports .json, .yml, .yaml files"""
+    print(f'{formatter=}')
+    with open(file_path1) as f1_open:
+        with open(file_path2) as f2_open:
+            if len(f1_open.read()) == 0 or len(f2_open.read()) == 0:
+                return
 
     file1 = parse_files(file_path1)
     file2 = parse_files(file_path2)
-    merged_files = file1 | file2
-    sorted_list = sorted(merged_files.items(), key=lambda x: x[0])
-    sorted_files = dict(sorted_list)
-    result = '{' + '\n'
-    for i in sorted_files:
-        if i in file1.keys() & file2.keys():
-            if file1[i] == file2[i]:
-                result = result + '    ' + i + ': ' + str(file1[i]) + '\n'
-            else:
-                result = result + '  - ' + i + ': ' + str(file1[i]) + '\n'
-                result = result + '  + ' + i + ': ' + str(file2[i]) + '\n'
-        elif i in file1.keys() - file2.keys():
-            result = result + '  - ' + i + ': ' + str(file1[i]) + '\n'
-        elif i in file2.keys() - file1.keys():
-            result = result + '  + ' + i + ': ' + str(file2[i]) + '\n'
-    result = result + '}'
-    return result.lower()
 
+    keys1 = list(file1.keys())
+    keys2 = list(file2.keys())
 
-# print(generate_diff(r'gendiff/files/plain/json/file1.json', r'gendiff/files/plain/json/file2.json'))
+    if len(keys1) == 0 and len(keys2) == 0:
+        return
+    
+    result = make_diff(file1, file2, formatter)
+    return result
