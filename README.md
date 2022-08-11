@@ -20,3 +20,6 @@ https://asciinema.org/a/513886
 
 Plain output format for nested .json and .yaml
 https://asciinema.org/a/513898
+
+Json output format for nested .json and .yaml
+https://asciinema.org/a/514127
