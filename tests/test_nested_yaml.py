@@ -25,11 +25,18 @@ def test_gendiff_yaml(yaml1, yaml2):
     assert generate_diff(yaml1, yaml2) == assertion_result
 
 
-def test_gendiff_json_formatter_plain(yaml1, yaml2):
+def test_gendiff_yaml_formatter_plain(yaml1, yaml2):
     assertion_path = Path(cwd, 'tests', 'fixtures', 'assertion_string_formatter_plain.txt')
     with open(assertion_path, 'r') as assertion_string:
         assertion_result = assertion_string.read()
     assert generate_diff(yaml1, yaml2, formatter='plain') == assertion_result
+
+
+def test_gendiff_yaml_fomatter_json(yaml1, yaml2):
+    assertion_path = Path(cwd, 'tests', 'fixtures', 'assertion_string_formatter_json.txt')
+    with open(assertion_path, 'r') as assertion_string:
+        assertion_result = assertion_string.read()
+    assert generate_diff(yaml1, yaml2, formatter="json") == assertion_result
 
 
 def test_gendiff_with_empty(yaml1):
