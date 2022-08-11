@@ -24,5 +24,6 @@ def test_gendiff_json(json1, json2):
         assertion_result = assertion_string.read()
     assert generate_diff(json1, json2) == assertion_result
 
+
 def test_gendiff_with_empty(json1):
     assert generate_diff(json1, "tests/fixtures/empty.json") is None

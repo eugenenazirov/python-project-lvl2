@@ -24,5 +24,6 @@ def test_gendiff_yaml(yaml1, yaml2):
         assertion_result = assertion_string.read()
     assert generate_diff(yaml1, yaml2) == assertion_result
 
+
 def test_gendiff_with_empty(yaml1):
     assert generate_diff(yaml1, "tests/fixtures/empty.yml") is None
