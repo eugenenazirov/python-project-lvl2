@@ -6,8 +6,8 @@ from .dict_comparison import compare_dicts
 
 def make_diff(file1, file2, formatter="stylish"):
     '''Function makes sorted diff
-     and send it to one of the formatter. 
-     The default formatter is stylish. Plain and json formatters available'''
+    and send it to one of the formatter.
+    The default formatter is stylish. Plain and json formatters available.'''
     diff = compare_dicts(file1, file2)
 
     if formatter == "stylish":

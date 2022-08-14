@@ -63,13 +63,13 @@ def compare_with_second_dict(dict1, dict2, result):
 
 
 def compare_dicts(dict1, dict2):
-    '''Makes diff dict and returns sorted diff'''
+    '''Makes diff dict and returns sorted diff.'''
     diff = start_comparison(dict1, dict2)
     return sort_result(diff)
 
 
 def sort_result(tree):
-    '''Returns sorted dict'''
+    '''Returns sorted dict.'''
     result = {}
 
     def start(tree, result_cur):
