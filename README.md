@@ -1,7 +1,5 @@
 ###### Hexlet tests and linter status:
 [![Actions Status](https://github.com/eugenenazirov/python-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/eugenenazirov/python-project-lvl2/actions)
-
-###### Linter and Tests status
 [![Linter (flake8)](https://github.com/eugenenazirov/python-project-lvl2/actions/workflows/linter.yml/badge.svg?event=push)](https://github.com/eugenenazirov/python-project-lvl2/actions/workflows/linter.yml)
 [![Auto-Tests (pytest)](https://github.com/eugenenazirov/python-project-lvl2/actions/workflows/tests.yml/badge.svg?event=push)](https://github.com/eugenenazirov/python-project-lvl2/actions/workflows/tests.yml)
 
