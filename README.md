@@ -14,7 +14,7 @@ Supports .json and .yaml files.
 Output formats: stylish (default), plain & json.
 
 Requirements: 
-- Python ^3.10,
+- Python ^3.10
 - pip ^22.1
 
 Install the package with `pip install` and `*repository cloning https link*`.
