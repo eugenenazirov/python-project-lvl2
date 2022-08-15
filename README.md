@@ -8,7 +8,17 @@
 ### Code Coverage by codeclimate
 [![Test Coverage](https://api.codeclimate.com/v1/badges/20ba8352a3dd94528a80/test_coverage)](https://codeclimate.com/github/eugenenazirov/python-project-lvl2/test_coverage)
 
-### Generate Diff Demo
+### Generate Diff
+The cli tool for generating difference between two files. Almost like <git diff>.
+Supports .json and .yaml files.
+Output formats: stylish (default), plain & json.
+
+Requirements: Python 3.10, pip.
+
+Install the package with <pip install> and repository cloning https link.
+
+
+### Demo
 Plain .json files
 https://asciinema.org/a/509502
 
